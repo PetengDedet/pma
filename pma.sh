@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo 'Downloading phpMyAdmin 4.7.0.2'
-curl -#L https://files.phpmyadmin.net/phpMyAdmin/4.7.0/phpMyAdmin-4.7.0-all-languages.tar.gz -o phpmyadmin.tar.gz
+echo 'Downloading latest version of phpMyAdmin'
+curl -#L https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz -o phpmyadmin.tar.gz
 
 mkdir phpmyadmin && tar xf phpmyadmin.tar.gz -C phpmyadmin --strip-components 1
 
@@ -13,6 +13,6 @@ if [ ! -f $CMD ]; then
     CMD=/vagrant/scripts/serve.sh
 fi
 
-sudo bash $CMD phpmyadmin.app $(pwd)/phpmyadmin
+sudo bash $CMD phpmyadmin.localhost $(pwd)/phpmyadmin
 
 sudo service nginx reload

@@ -13,6 +13,8 @@ if [ ! -f $CMD ]; then
     CMD=/vagrant/scripts/serve.sh
 fi
 
-sudo bash $CMD phpmyadmin.localhost $(pwd)/phpmyadmin
+DIR=" $(pwd)/phpmyadmin"
+
+sudo bash $CMD phpmyadmin.localhost $DIR
 
 sudo systemctl reload nginx

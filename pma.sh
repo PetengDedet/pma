@@ -15,4 +15,4 @@ fi
 
 sudo bash $CMD phpmyadmin.localhost $(pwd)/phpmyadmin
 
-sudo service nginx reload
+sudo systemctl reload nginx
